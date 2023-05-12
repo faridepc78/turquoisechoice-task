@@ -1,4 +1,4 @@
-#shop-api
+#turquoisechoice-task
 <p align="center ">
 </p>
 
@@ -32,7 +32,7 @@ php artisan key:generate
 
 php artisan migrate --seed
 
-# you can postman collection in database folder
+# you can user postman collection in doc folder
 
 # Then launch the server:
 
