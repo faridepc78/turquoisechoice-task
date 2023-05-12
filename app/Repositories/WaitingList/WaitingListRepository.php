@@ -20,8 +20,8 @@ class WaitingListRepository extends BaseRepository implements WaitingListReposit
     public function filterPaginate(int $per_page, ?int $group_number, bool $with_trashed): LengthAwarePaginator
     {
         return $this->model::query()
-            ->when(!$with_trashed, function (Builder $query) {
-                return $query->whereNull('removed_at');
+            ->when($with_trashed, function (Builder $query) {
+                return $query->whereNotNull('removed_at');
             })
             ->when($group_number, function (Builder $query) use ($group_number) {
                 return $query->where('group_number', '=', $group_number);

@@ -1,0 +1,179 @@
+{
+	"info": {
+		"_postman_id": "2be5a4d0-c61b-44d0-b9ea-3adf54765358",
+		"name": "turquoisechoice-task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Api",
+			"item": [
+				{
+					"name": "V1",
+					"item": [
+						{
+							"name": "WaitingList",
+							"item": [
+								{
+									"name": "index",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true,
+										"disabledSystemHeaders": {
+											"accept": true
+										}
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "default"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{LOCAL_BASE_URL}}/v1/waiting_lists?page=1&per_page=50&group_number=1&with_trashed=1",
+											"host": [
+												"{{LOCAL_BASE_URL}}"
+											],
+											"path": [
+												"v1",
+												"waiting_lists"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "1"
+												},
+												{
+													"key": "per_page",
+													"value": "50"
+												},
+												{
+													"key": "group_number",
+													"value": "1"
+												},
+												{
+													"key": "with_trashed",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "store",
+									"protocolProfileBehavior": {
+										"disabledSystemHeaders": {
+											"accept": true
+										}
+									},
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "default"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"player_name\": \"karim\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{LOCAL_BASE_URL}}/v1/waiting_lists",
+											"host": [
+												"{{LOCAL_BASE_URL}}"
+											],
+											"path": [
+												"v1",
+												"waiting_lists"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "delete",
+									"protocolProfileBehavior": {
+										"disabledSystemHeaders": {
+											"accept": true
+										}
+									},
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "default"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"player_name\": \"karim\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{LOCAL_BASE_URL}}/v1/waiting_lists",
+											"host": [
+												"{{LOCAL_BASE_URL}}"
+											],
+											"path": [
+												"v1",
+												"waiting_lists"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "LOCAL_BASE_URL",
+			"value": "https://turquoisechoice-task.test/api",
+			"type": "default"
+		}
+	]
+}

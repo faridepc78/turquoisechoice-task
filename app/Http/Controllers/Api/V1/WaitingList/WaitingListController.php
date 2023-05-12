@@ -33,8 +33,6 @@ class WaitingListController extends Controller
 
     public function store(StoreWaitingListRequest $request)
     {
-        $player_name = $request->input('player_name');
-
         $group_number = $this->waitingListRepository->calculateGroupNumber();
 
         $request->merge([
